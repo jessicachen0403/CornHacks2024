@@ -1,25 +1,18 @@
-import logo from './logo.svg';
+import { Flex, useColorModeValue } from '@chakra-ui/react';
 import './App.css';
+import Timer from './components/Timer';
 
 
 function LiveSession() {
  return (
-   <div className="App">
-     <header className="App-header">
-       <img src={logo} className="App-logo" alt="logo" />
-       <p>
-         Edit <code>src/App.js</code> and save to reload.
-       </p>
-       <a
-         className="App-link"
-         href="https://reactjs.org"
-         target="_blank"
-         rel="noopener noreferrer"
-       >
-         Learn React
-       </a>
-     </header>
-   </div>
+   <Flex 
+    bg={useColorModeValue('gray.100', 'gray.700')}
+    minH='100vh'
+    alignItems='center'
+    justifyContent='center'
+   >
+    <Timer />
+   </Flex>
  );
 }
 
