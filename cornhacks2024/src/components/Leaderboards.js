@@ -1,4 +1,6 @@
+// Leaderboard.js
 import React from 'react';
+import { Box, Heading, Table, Thead, Tbody, Tr, Th, Td, VStack, } from '@chakra-ui/react';
 
 const Leaderboard = ({ users }) => {
   // Assuming users is an array of objects with properties like id, name, points, etc.
@@ -7,27 +9,27 @@ const Leaderboard = ({ users }) => {
   const sortedUsers = users.sort((a, b) => b.points - a.points);
 
   return (
-    <div className="leaderboard">
-      <h2>Study Leaderboard</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Rank</th>
-            <th>Name</th>
-            <th>Points</th>
-          </tr>
-        </thead>
-        <tbody>
+    <Box className="leaderboard" p={6} borderWidth="1px" borderRadius="lg" overflow="hidden" boxShadow="md">
+      <Heading as="h2" size="md" mb={4}>Study Leaderboard</Heading>
+      <Table variant="simple">
+        <Thead>
+          <Tr>
+            <Th>Rank</Th>
+            <Th>Name</Th>
+            <Th>Points</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
           {sortedUsers.map((user, index) => (
-            <tr key={user.id}>
-              <td>{index + 1}</td>
-              <td>{user.name}</td>
-              <td>{user.points}</td>
-            </tr>
+            <Tr key={user.id}>
+              <Td>{index + 1}</Td>
+              <Td>{user.name}</Td>
+              <Td>{user.points}</Td>
+            </Tr>
           ))}
-        </tbody>
-      </table>
-    </div>
+        </Tbody>
+      </Table>
+    </Box>
   );
 };
 
