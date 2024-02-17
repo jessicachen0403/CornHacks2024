@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Flex, Text, Link } from '@chakra-ui/react';
+import {Link as ReactRouterLink} from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -7,13 +8,13 @@ const Footer = () => {
       <Flex justify="space-between" align="center">
         <Text fontSize="md">© 2024 Live Study Buddy</Text>
         <Flex>
-          <Link mx={2} href="#" target="_blank" rel="noopener noreferrer">
+          <Link mx={2} href="#">
             Terms of Service
           </Link>
-          <Link mx={2} href="#" target="_blank" rel="noopener noreferrer">
+          <Link mx={2} href="#">
             Privacy Policy
           </Link>
-          <Link mx={2} href="/about" target="_blank" rel="noopener noreferrer">
+          <Link as={ReactRouterLink} to="/about" mx={2}>
             About Us
           </Link>
         </Flex>
@@ -23,3 +24,6 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
+//href="/about" target="_blank" rel="noopener noreferrer"
