@@ -18,8 +18,8 @@ function App() {
           <Router>
             <Routes>
               <Route exact path="/" element={<UserPage />} />
-              <Route exact path="/live" element={<LiveSession />} />
-              <Route exact path="/about" element={<About />} />
+              <Route exact path="/live/" element={<LiveSession />} />
+              <Route exact path="/about/" element={<About />} />
             </Routes>
           </Router>
         </div>
