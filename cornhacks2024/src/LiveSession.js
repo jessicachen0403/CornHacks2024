@@ -3,6 +3,7 @@ import './App.css';
 import Timer from './components/Timer';
 import TodoList from './components/TodoList';
 import Leaderboards from './components/Leaderboards';
+import GoalTracker from './components/GoalsTracker';
 
 
 function LiveSession() {
@@ -20,7 +21,8 @@ function LiveSession() {
     justifyContent='center'
    >
     <Timer />
-    <TodoList />
+    {/* <TodoList /> */}
+    <GoalTracker/>
     <Leaderboards users={users} />
    </Flex>
  );

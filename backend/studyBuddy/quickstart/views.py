@@ -11,6 +11,21 @@ def all_items(request):
     serializer = ToDoItemSerializer(form_submissions, many=True)
     return Response(serializer.data)
 
+@api_view(['GET'])
+def user_items(request):
+    # Get user_id from query parameters
+    user_id = request.GET.get('user')
+
+    # Validate user_id
+    if not user_id:
+        return Response({'error': 'Missing user_id parameter'}, status=400)
+
+    # Filter ToDoItems by user_id
+    form_submissions = ToDoItem.objects.filter(user=user_id)
+    serializer = ToDoItemSerializer(form_submissions, many=True)
+
+    return Response(serializer.data)
+
 @api_view(['POST'])
 def submit_item(request):
     print(request.data)

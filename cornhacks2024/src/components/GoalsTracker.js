@@ -1,5 +1,5 @@
 // GoalTracker.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { VStack, Input, Button, UnorderedList, ListItem, Progress, Box, Text, Flex, Spacer, Stack } from '@chakra-ui/react';
 
 const GoalTracker = () => {
@@ -9,16 +9,41 @@ const GoalTracker = () => {
 
   const addGoal = () => {
     if (newGoal.trim() !== '') {
-      setGoals([...goals, { text: newGoal, done: false }]);
+      setGoals([...goals, { title: newGoal, done: false }]);
       setNewGoal('');
     }
   };
 
-  const toggleGoal = (index) => {
+  const toggleGoal = (index) => { // Needs to call another endpoint to delete goal
     const updatedGoals = [...goals];
     updatedGoals[index].done = !updatedGoals[index].done;
     setGoals(updatedGoals);
   };
+
+  useEffect(() => {
+    // Replace 'your_api_url' with the actual URL of your Django API
+    const apiUrl = `http://localhost:8000/user_items/?user=${user}`;
+
+    fetch(apiUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        const extractedGoals = data.map(item => ({
+          title: item.title,
+          completed: item.completed,
+        }));
+        console.log(extractedGoals);
+
+        setGoals([...goals, ...extractedGoals]);
+      })
+      .catch(err => {
+        console.log(err.message);
+      });
+  }, [user]);
 
   const handleSubmit = async () => {
     try {
@@ -73,7 +98,7 @@ const GoalTracker = () => {
     <div>
       <Stack spacing={8} align="left">
         <Box p={6} maxW="xl" borderWidth="1px" borderRadius="lg" overflow="hidden" boxShadow="md" mx="auto">
-          <Text fontSize="3xl" fontWeight="bold" color="#628395">
+          <Text fontSize="3xl" fontWeight="bold" color='#c8d9d3'>
             User Goals
           </Text>
           <VStack align="left" spacing={4}>
@@ -88,7 +113,7 @@ const GoalTracker = () => {
             <UnorderedList styleType="none" pl={0}>
               {goals.map((goal, index) => (
                 <ListItem key={index}>
-                  {goal.text}
+                  {goal.title}
                   <Button
                     colorScheme={goal.done ? 'green' : 'red'}
                     size="sm"
