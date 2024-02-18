@@ -20,7 +20,13 @@ const TodoList = () => {
   };
 
   return (
-    <Box p={4} bg='#c8d9d3'>
+    <Box p={4} 
+    bg='#c8d9d3' 
+    borderRadius="xl"
+    boxShadow="md"
+    w="100%"
+    maxW="300px"
+    h='240px'>
       <VStack align="start" spacing={4}>
         <Input
           placeholder="Add a new todo"

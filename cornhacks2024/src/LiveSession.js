@@ -19,6 +19,7 @@ function LiveSession() {
     bg='#687dac'
     alignItems='center'
     justifyContent='center'
+    gap='3'
    >
     <Timer />
     {/* <TodoList /> */}

@@ -17,8 +17,6 @@ const Leaderboard = ({ users }) => {
             <Th>Rank</Th>
             <Th>Name</Th>
             <Th>Points</Th>
-            <Th>Goals</Th>
-            <Th>Progress</Th>
           </Tr>
         </Thead>
         <Tbody>

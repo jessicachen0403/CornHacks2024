@@ -50,7 +50,7 @@ function Timer() {
       textAlign="center"
       bg='#d2e0ee'
       p={4}
-      borderRadius="md"
+      borderRadius="xl"
       boxShadow="md"
       w="100%"
       maxW="500px"

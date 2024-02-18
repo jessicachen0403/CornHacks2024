@@ -6,7 +6,7 @@ const UserProfile = () => {
   return (
     <Box p={6} maxW="xl" borderWidth="1px" borderRadius="lg" overflow="hidden" boxShadow="md" mx="auto" >
     <Box
-        bgGradient='linear(to-r, #DFD5A5, #DBAD6A)'
+        bgGradient='linear(to-r, #c8d9d3, #84a29f)'
         h="50%"
         borderRadius="lg"
         p={6}

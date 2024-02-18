@@ -45,16 +45,17 @@ function UserPage() {
   return (
   <>
    <Flex>
-      <Box w="50%">
+      <Box w="50%" ml='20px' mt='20px'>
         <UserProfile />
       </Box>
-      <Box w="50%" pl={10}>
+      <Box w="50%" pl={20} mt='20px'>
         <VStack align="start">
         {/*<Leaderboards users={users} />*/}
+        <GoalsTracker />
         </VStack>
       </Box>
-      <Box w="50%" pl={10}>
-        <GoalsTracker />
+      <Box w="50%" pl={10} mt='10px'>
+        
         <StudySessions sessions={fakeSessionData} />
       </Box>
     </Flex>
