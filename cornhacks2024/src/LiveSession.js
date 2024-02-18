@@ -1,6 +1,7 @@
 import { Flex, useColorModeValue } from '@chakra-ui/react';
 import './App.css';
 import Timer from './components/Timer';
+import TodoList from './components/TodoList';
 
 
 function LiveSession() {
@@ -12,6 +13,7 @@ function LiveSession() {
     justifyContent='center'
    >
     <Timer />
+    <TodoList />
    </Flex>
  );
 }
