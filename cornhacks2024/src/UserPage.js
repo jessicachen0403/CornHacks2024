@@ -23,6 +23,9 @@ function UserPage() {
         {/*<Leaderboards users={users} />*/}
         </VStack>
       </Box>
+      <Box w="50%" pl={10}>
+        <GoalTracker />
+      </Box>
     </Flex>
    
   </>
