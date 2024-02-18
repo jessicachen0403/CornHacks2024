@@ -13,6 +13,7 @@ def all_items(request):
 
 @api_view(['POST'])
 def submit_item(request):
+    print(request.data)
     serializer = ToDoItemSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()

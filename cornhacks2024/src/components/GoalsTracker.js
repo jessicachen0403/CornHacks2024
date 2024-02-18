@@ -5,6 +5,7 @@ import { VStack, Input, Button, UnorderedList, ListItem, Progress, Box, Text, Fl
 const GoalTracker = () => {
   const [goals, setGoals] = useState([]);
   const [newGoal, setNewGoal] = useState('');
+  const [user, setUser] = useState(1); // hardcoded user ID
 
   const addGoal = () => {
     if (newGoal.trim() !== '') {
@@ -17,6 +18,44 @@ const GoalTracker = () => {
     const updatedGoals = [...goals];
     updatedGoals[index].done = !updatedGoals[index].done;
     setGoals(updatedGoals);
+  };
+
+  const handleSubmit = async () => {
+    try {
+      await addGoal();
+  
+      // Assuming newGoal is a state variable
+      const userInput = newGoal.trim();
+      
+      // Validate if userInput is a non-empty string
+      if (!userInput) {
+        throw new Error('Invalid input. Please enter a JSON string.');
+      }
+  
+      const jsonData = {
+        "user": user,
+        "title": newGoal,
+        "description": "",
+        "completed": false
+      };
+  
+      const response = await fetch('http://127.0.0.1:8000/submit_item/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(jsonData),
+      });
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+  
+      const responseData = await response.json();
+      console.log(`Item submitted successfully: ${JSON.stringify(responseData)}`);
+    } catch (error) {
+      console.log(`Error: ${error.message}`);
+    }
   };
 
   const calculateProgress = () => {
@@ -43,7 +82,7 @@ const GoalTracker = () => {
               value={newGoal}
               onChange={(e) => setNewGoal(e.target.value)}
             />
-            <Button colorScheme="teal" onClick={addGoal}>
+            <Button colorScheme="teal" onClick={handleSubmit}>
               Add Goal
             </Button>
             <UnorderedList styleType="none" pl={0}>

@@ -15,7 +15,7 @@ function App() {
         <div className="content">
           <Routes>
             <Route exact path="/" element={<UserPage />} />
-            <Route exact path="/live/" element={<LiveSession />} />
+            <Route exact path="/live/:id" element={<LiveSession />} />
             <Route exact path="/about/" element={<About />} />
           </Routes>
         </div>
