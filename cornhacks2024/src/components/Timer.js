@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Button, Center, Text } from '@chakra-ui/react';
+import { Box, Button, Center, Text, useColorModeValue } from '@chakra-ui/react';
 
 function Timer() {
   const [time, setTime] = useState(25 * 60);
   const [isActive, setIsActive] = useState(false);
   const [isBreak, setIsBreak] = useState(false);
+
+  const backgroundColor = useColorModeValue('gray.100', 'gray.700');
 
   useEffect(() => {
     let interval;
@@ -42,8 +44,17 @@ function Timer() {
   };
 
   return (
+    
     <Center h="100vh">
-      <Box textAlign="center">
+      <Box 
+      textAlign="center"
+      bg={backgroundColor}
+      p={4}
+      borderRadius="md"
+      boxShadow="md"
+      w="100%"
+      maxW="500px"
+      >
         <Text fontSize="4xl">{isBreak ? 'Break Time' : 'Study Time'}</Text>
         <Text fontSize="6xl" fontWeight="bold">{formatTime(time)}</Text>
         <Box mt={4}>

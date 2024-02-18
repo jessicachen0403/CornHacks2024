@@ -7,7 +7,6 @@ function LiveSession() {
  return (
    <Flex 
     bg={useColorModeValue('gray.100', 'gray.700')}
-    minH='100vh'
     alignItems='center'
     justifyContent='center'
    >
