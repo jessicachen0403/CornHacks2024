@@ -97,7 +97,7 @@ const GoalTracker = () => {
   return (
     <div>
       <Stack spacing={8} align="left">
-        <Box p={6} maxW="xl" borderWidth="1px" borderRadius="lg" overflow="hidden" boxShadow="md" mx="auto">
+        <Box p={6} maxW="xl" borderWidth="1px" borderRadius="lg" overflow="hidden" boxShadow="md" mx="auto" bg='white'>
           <Text fontSize="3xl" fontWeight="bold" color='#c8d9d3'>
             User Goals
           </Text>
