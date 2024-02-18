@@ -1,6 +1,6 @@
 import './App.css';
 import UserProfile from './components/UserProfile';
-import Leaderboards from './components/Leaderboards';
+//import Leaderboards from './components/Leaderboards';
 import { Flex, Box, VStack } from '@chakra-ui/react';
 
 
@@ -20,7 +20,7 @@ function UserPage() {
       </Box>
       <Box w="50%" pl={10}>
         <VStack align="start">
-        <Leaderboards users={users} />
+        {/*<Leaderboards users={users} />*/}
         </VStack>
       </Box>
     </Flex>

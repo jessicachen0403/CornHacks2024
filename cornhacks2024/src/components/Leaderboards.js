@@ -9,7 +9,7 @@ const Leaderboard = ({ users }) => {
   const sortedUsers = users.sort((a, b) => b.points - a.points);
 
   return (
-    <Box className="leaderboard" p={6} borderWidth="1px" borderRadius="lg" overflow="hidden" boxShadow="md">
+    <Box className="leaderboard" p={6} borderWidth="1px" borderRadius="lg" overflow="hidden" boxShadow="md" bg='#f2e3d2'>
       <Heading as="h2" size="md" mb={4}>Study Leaderboard</Heading>
       <Table variant="simple">
         <Thead>
@@ -17,6 +17,8 @@ const Leaderboard = ({ users }) => {
             <Th>Rank</Th>
             <Th>Name</Th>
             <Th>Points</Th>
+            <Th>Goals</Th>
+            <Th>Progress</Th>
           </Tr>
         </Thead>
         <Tbody>

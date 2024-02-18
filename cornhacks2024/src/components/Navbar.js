@@ -4,7 +4,7 @@ import {Link as ReactRouterLink} from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <Box bg="#DFD5A5" color="#628395" p={4} top="0" left="0" right="0" zIndex="1000" width="100%">
+    <Box bg="#f2e3d2" color="#628395" p={4} top="0" left="0" right="0" zIndex="1000" width="100%">
       <Flex justify="space-between" align="center">
         <Text fontSize="xl">Live Study Buddy</Text>
         <Flex>

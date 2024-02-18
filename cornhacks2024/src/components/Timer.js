@@ -48,7 +48,7 @@ function Timer() {
     <Center h="100vh">
       <Box 
       textAlign="center"
-      bg={backgroundColor}
+      bg='#d2e0ee'
       p={4}
       borderRadius="md"
       boxShadow="md"

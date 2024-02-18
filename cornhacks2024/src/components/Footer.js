@@ -4,7 +4,7 @@ import {Link as ReactRouterLink} from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <Box bg="#DFD5A5" color="#628395" p={4} position="fixed" bottom="0" left="0" right="0" zIndex="1000" width="100%">
+    <Box bg="#f2e3d2" color="#687dac" p={4} position="fixed" bottom="0" left="0" right="0" zIndex="1000" width="100%">
       <Flex justify="space-between" align="center">
         <Text fontSize="md">© 2024 Live Study Buddy</Text>
         <Flex>

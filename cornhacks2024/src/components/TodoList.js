@@ -20,14 +20,15 @@ const TodoList = () => {
   };
 
   return (
-    <Box p={4}>
+    <Box p={4} bg='#c8d9d3'>
       <VStack align="start" spacing={4}>
         <Input
           placeholder="Add a new todo"
+          placeholderTextColor='white'
           value={newTodo}
           onChange={(e) => setNewTodo(e.target.value)}
         />
-        <Button colorScheme="teal" onClick={addTodo}>
+        <Button colorScheme="green" onClick={addTodo}>
           Add Todo
         </Button>
         <Stack align="start" spacing={2}>
